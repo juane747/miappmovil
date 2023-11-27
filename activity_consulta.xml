@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".ConsultaActivity">
+
+    <!-- Creacion de titulo -->
+    <TextView
+        android:id="@+id/tituloPaises"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Paises"
+        android:textSize="38sp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp" />
+
+    <!-- Colocacion de separador -->
+    <View
+        android:id="@+id/lineaSeparadora"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintTop_toBottomOf="@+id/tituloPaises"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp" />
+
+    <!-- Creacion de lista -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewPaises"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:ignore="MissingConstraints" />
+
+    <!-- Definiendo recepcion de lista -->
+    <TextView
+        android:id="@+id/textViewNombrePais"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@+id/lineaSeparadora"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+<!-- creacion de boton ejecutor -->
+    <Button
+        android:id="@+id/buttonrefrescar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="mostrar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.488"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tituloPaises"
+        tools:ignore="MissingConstraints" />
+</androidx.constraintlayout.widget.ConstraintLayout>
